@@ -1,6 +1,15 @@
 package com.example.demo.hello;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="CHUCK_NOORIS_FACT")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ChuckNoorisFact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String fact;
 
